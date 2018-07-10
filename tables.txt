@@ -1,0 +1,15 @@
+ create table user_master(user_id varchar2(10) references employee(emp_id),
+ user_name varchar2(15),
+ user_password varchar2(50),
+ user_type varchar2(10) check(user_type in('admin','user')));
+
+
+
+
+===================================================================================
+ii.	Department: Dept_ID int primary key, Dept_Name VARCHAR2(50) 
+
+iii.	Employee: Emp_ID VARCHAR2(6) primary key, Emp_FirstName VARCHAR2(25), Emp_LastName VARCHAR2(25), Emp_Date_of_Birth DATE, Emp_Date_of_Joining DATE, Emp_Dept_ID int referneces department(dept_id), Emp_Grade VARCHAR2(2) references grade_master(grade_code), Emp_Designation VARCHAR2(50), Emp_Basic int, Emp_Gender VARCHAR2(1), Emp_Marital_Status VARCHAR2(1), Emp_Home_Address VARCHAR2(100), Emp_Contact_Num VARCHAR2(15), Mngr_Id varchar2(6) references employee(emp_ID)
+
+
+iv.	Grade_Master: Grade_Code VARCHAR2(2) primary key, Description VARCHAR2(10), Min_Salary int, Max_Salary int
